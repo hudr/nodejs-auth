@@ -19,6 +19,7 @@ const UserSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
+    // Não queremos que o campo password venha junto
     select: false,
   },
   createdAt: {

@@ -18,9 +18,17 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // pois estaremos rodando um só servidor.
 require('./controllers/authConntroller')(app)
 
+// Rota de exemplo para validação de JWT
+require('./controllers/projectController')(app)
+
 app.get('/', (req, res) => {
   res.send('Estou rodando.')
 })
 
+// Desativa o X-Powered-By: Express
+app.disable('x-powered-by')
+
 // Onde estou sendo servido?
-app.listen(3000)
+app.listen(3000, () => {
+  console.log('Aplicação rodando na porta 3000')
+})
