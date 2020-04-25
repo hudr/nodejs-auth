@@ -13,7 +13,7 @@ module.exports = (req, res, next) => {
   // Bearer 312321ddav2213
   const parts = authHeader.split(' ')
 
-  if (!parts.length === 2) {
+  if (!(parts.length === 2)) {
     return res.status(401).send({ erro: 'Erro no token!' })
   }
 
